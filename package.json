@@ -1,0 +1,125 @@
+{
+  "name": "react-component-template",
+  "version": "1.0.0",
+  "description": "A react component template",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "clean:commonjs": "rimraf lib",
+    "clean:umd": "rimraf dist",
+    "clean:esm": "rimraf ems",
+    "clean:exdist": "rimraf examples/dist",
+    "create-github-release": "conventional-github-releaser -p angular",
+    "build:commonjs": "cross-env BABEL_OUTPUT=commonjs babel src/ --out-dir lib/ --ignore **/__tests__,**/__mocks__",
+    "build:esm": "babel src/ --out-dir esm/ --ignore **/__tests__,**/__mocks__",
+    "build:umd": "rollup -c",
+    "build": "npm-run-all clean:* --parallel build:*",
+    "format": "eslint src --fix",
+    "lint": "eslint src",
+    "precommit": "lint-staged",
+    "prebump": "run-s lint test",
+    "prepare": "npm run build",
+    "release": "standard-version --sign",
+    "test": "cross-env BABEL_OUTPUT=commonjs jest",
+    "start": "webpack-dev-server --inline --content-base examples/",
+    "website": "run-s website:clean website:build",
+    "website:clean": "rimraf examples/dist",
+    "website:build": "cross-env NODE_ENV=production webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/damujiangr/react-component-template.git"
+  },
+  "author": "damujiangr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/damujiangr/react-component-template/issues"
+  },
+  "files": [
+    "dist",
+    "esm",
+    "lib",
+    "style"
+  ],
+  "homepage": "https://github.com/damujiangr/react-component-template",
+  "keywords": [
+    "react",
+    "component",
+    "template",
+    "react-component"
+  ],
+  "peerDependencies": {
+    "react": "^0.14.9 || ^15.3.0 || ^16.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.40",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/plugin-external-helpers": "^7.0.0-beta.40",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.40",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^8.0.1",
+    "babel-jest": "^22.2.2",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.0",
+    "conventional-github-releaser": "^2.0.0",
+    "cross-env": "^5.0.0",
+    "css-loader": "^0.28.0",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb": "^16.0.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.2.0",
+    "eslint-plugin-react": "^7.0.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "hoist-non-react-statics": "^2.3.1",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.14.3",
+    "jest": "^22.3.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "lint-staged": "^6.0.0",
+    "npm-run-all": "^4.1.1",
+    "prettier": "^1.2.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-live": "^1.7.1",
+    "react-modal": "^3.0.0",
+    "react-test-renderer": "^16.0.0",
+    "rimraf": "^2.5.2",
+    "rollup": "^0.56.1",
+    "rollup-plugin-babel": "^4.0.0-beta.1",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-ignore": "^1.0.3",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-uglify": "^3.0.0",
+    "standard-version": "^4.2.0",
+    "style-loader": "^0.20.0",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "dependencies": {
+    "classnames": "^2.2.0",
+    "prop-types": "^15.5.0"
+  },
+  "jest": {
+    "roots": [
+      "src"
+    ],
+    "testRegex": "/__tests__/.+-test\\.js$"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

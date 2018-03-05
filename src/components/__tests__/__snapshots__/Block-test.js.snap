@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Block /> should accept className 1`] = `
+<div>
+  Block
+</div>
+`;
+
+exports[`<Block /> should have sane defaults 1`] = `
+<div>
+  Block
+</div>
+`;
