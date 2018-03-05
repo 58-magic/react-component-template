@@ -1,6 +1,8 @@
-# react-component-template
+# react-component-template[![Build Status](https://travis-ci.org/damujiangr/react-component-template.svg?branch=master)](https://travis-ci.org/damujiangr/react-component-template) 
+
 react组件的模版
 
+# 工程结构
 
 ```
 ├── LICENSE
