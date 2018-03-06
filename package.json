@@ -21,6 +21,7 @@
     "prepare": "npm run build",
     "release": "standard-version --sign",
     "test": "cross-env BABEL_OUTPUT=commonjs jest",
+    "codecov": "codecov",
     "start": "webpack-dev-server --inline --content-base examples/",
     "website": "run-s website:clean website:build",
     "website:clean": "rimraf examples/dist",
@@ -64,6 +65,7 @@
     "babel-jest": "^22.2.2",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.0",
+    "codecov": "^3.0.0",
     "conventional-github-releaser": "^2.0.0",
     "cross-env": "^5.0.0",
     "css-loader": "^0.28.0",
@@ -114,6 +116,7 @@
     "roots": [
       "src"
     ],
+    "collectCoverage": true,
     "testRegex": "/__tests__/.+-test\\.js$"
   },
   "lint-staged": {
