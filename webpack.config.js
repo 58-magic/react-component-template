@@ -91,7 +91,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'react-tabs': path.resolve(__dirname, 'src/index'),
+      'react-component-template': path.resolve(__dirname),
     },
   },
   plugins,

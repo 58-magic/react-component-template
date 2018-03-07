@@ -8,9 +8,9 @@ import ignore from 'rollup-plugin-ignore';
 const devConfig = {
   input: 'src/index.js',
   output: {
-    file: 'dist/react-tabs.development.js',
+    file: 'dist/react-component-template.development.js',
     format: 'umd',
-    name: 'ReactTabs',
+    name: 'ReactComponentTemplate',
     globals: {
       'prop-types': 'PropTypes',
       react: 'React',
@@ -31,9 +31,9 @@ const devConfig = {
 const productionConfig = {
   input: 'src/index.js',
   output: {
-    file: 'dist/react-tabs.production.min.js',
+    file: 'dist/react-component-template.production.min.js',
     format: 'umd',
-    name: 'ReactTabs',
+    name: 'ReactComponentTemplate',
     globals: {
       react: 'React',
     },

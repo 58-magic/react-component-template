@@ -35,11 +35,14 @@ react组件的模版
 - 命令
     + `npm run build`: 构建产物
     + `npm run start`: 本地启动，默认端口`8000`
-        - `examples`中按照引用包的方式引用了`react-component-template`组件
-            ```
-            import Block from 'react-component-template';
-            ```
-          本地测试时需要使用`npm link`，参考链接[npm link](https://docs.npmjs.com/cli/link)
+        - `examples`中按照引用包的方式引用了`react-component-template`组件，在`webpack.config.js`中按照如下配置
+          ```
+          resolve: {
+            alias: {
+              'react-component-template': path.resolve(__dirname),
+            },
+          },
+          ```
     + `npm run format`: 格式化
     + `npm run lint`: 代码校验，配置规则在`.eslintrc`中
 
@@ -52,3 +55,4 @@ react组件的模版
 
 # TODO
 - 添加自动生成CHANGELOG的脚本 conventional-github-releaser
+- 浏览器兼容性这里不做，感兴趣的推荐方案如下：`SAUCELABS`+`Nightwatch`
