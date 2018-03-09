@@ -31,12 +31,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/damujiangr/react-component-template.git"
+    "url": "https://github.com/58-magic/react-component-template.git"
   },
   "author": "damujiangr",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/damujiangr/react-component-template/issues"
+    "url": "https://github.com/58-magic/react-component-template/issues"
   },
   "files": [
     "dist",
@@ -44,7 +44,7 @@
     "lib",
     "style"
   ],
-  "homepage": "https://github.com/damujiangr/react-component-template",
+  "homepage": "https://github.com/58-magic/react-component-template",
   "keywords": [
     "react",
     "component",
