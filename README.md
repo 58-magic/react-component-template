@@ -1,7 +1,7 @@
 # react-component-template
-[![GitHub license](https://img.shields.io/github/license/damujiangr/react-component-template.svg)](https://github.com/damujiangr/react-component-template/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/damujiangr/react-component-template.svg?branch=master)](https://travis-ci.org/damujiangr/react-component-template)
-[![codecov](https://codecov.io/gh/damujiangr/react-component-template/branch/master/graph/badge.svg)](https://codecov.io/gh/damujiangr/react-component-template) 
+[![license](https://img.shields.io/github/license/58-magic/react-component-template.svg)](https://github.com/damujiangr/react-component-template/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/58-magic/react-component-template.svg?branch=master)](https://travis-ci.org/58-magic/react-component-template)
+[![codecov](https://codecov.io/gh/58-magic/react-component-template/branch/master/graph/badge.svg)](https://codecov.io/gh/58-magic/react-component-template)
 
 react组件的模版
 
