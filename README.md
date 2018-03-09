@@ -12,7 +12,7 @@ react组件的模版
 ├── README.md
 ├── dist                    // 产物外链版本
 ├── esm                     // 产物ES6版本
-├── examples
+├── examples                // 示例代码
 ├── lib                     // 产物ES5正常版本
 ├── node_modules
 ├── package-lock.json
@@ -52,6 +52,16 @@ react组件的模版
             npm i -g serve
             serve -s examples/dist
         ```
+
+- 修改项
+    1. `package.json`中所有与仓库信息相关的字段，包含`name`、`repository`、`bugs`、`homepage`
+    1. `rollup.config.js`中`output`相关字段：`file`、`name`
+    1. `webpack.config.js`中`resolve.alias`字段
+    1. `examples`示例中的相关字段
+
+
+
+
 
 # TODO
 - 添加自动生成CHANGELOG的脚本 conventional-github-releaser
