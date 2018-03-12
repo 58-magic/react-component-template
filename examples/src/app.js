@@ -4,7 +4,7 @@ import Block from 'react-component-template';// eslint-disable-line
 import 'react-component-template/style/component.css';// eslint-disable-line
 
 ReactDOM.render(
-  <div className="react-component-template">
+  <div className="component-template">
     <Block />
   </div>,
   document.getElementById('example'),
