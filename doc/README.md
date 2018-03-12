@@ -1,9 +1,8 @@
-# react-component-template
-[![license](https://img.shields.io/github/license/58-magic/react-component-template.svg)](https://github.com/58-magic/react-component-template/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/58-magic/react-component-template.svg?branch=master)](https://travis-ci.org/58-magic/react-component-template)
-[![codecov](https://codecov.io/gh/58-magic/react-component-template/branch/master/graph/badge.svg)](https://codecov.io/gh/58-magic/react-component-template)
+# react-component-template使用说明
 
-react组件的模版
+Github地址：[react-component-template](https://github.com/58-magic/react-component-template)
+
+> 占位符号说明：工程中有两个占位符`react-component-template`(NPM引用名)和`ReactComponentTemplate`(变量引用名)，如果你的工程是通过`yo react-component-magic`生成的，这两个占位可能已经被自定义的名称替换了，参看`package.json`的`name`字段
 
 # 工程结构
 
@@ -56,20 +55,9 @@ react组件的模版
         ```
 
 - 修改项
+    > 如果工程是通过`yo react-component-magic`生成的，可忽略本段内容
     1. `package.json`中所有与仓库信息相关的字段，包含`name`、`repository`、`bugs`、`homepage`
     1. `rollup.config.js`中`output`相关字段：`file`、`name`
         - `ReactComponentTemplate`是通过`script:src`引入方式时对外暴露的组件名
     1. `webpack.config.js`中`resolve.alias`字段
     1. `examples`示例中的相关字段
-
-    需要修改的占位符参看下边描述
-
-- 占位符号
-    - 为了保持本工程下载可用，占位符并没有加入一下常用的占位符号，目前有两个占位：`react-component-template`和`ReactComponentTemplate`，使用时可按自己组件的名字进行修改
-    - 维护本仓库的人请勿乱用这两个名称，它们会被基于`yoeman`的脚手架`generator-react-component-magic`使用
-
-
-
-# TODO
-- 添加自动生成CHANGELOG的脚本 conventional-github-releaser
-- 浏览器兼容性这里不做，感兴趣的推荐方案如下：`SAUCELABS`+`Nightwatch`
