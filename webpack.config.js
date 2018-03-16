@@ -28,16 +28,17 @@ if (!isDev) {
   plugins.push(
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        compress: {
-            warnings: false,
-        },
-      },
-      sourceMap: false,
-    }),
-);
+    }));
+  // plugins.push(
+  //   new UglifyJsPlugin({
+  //     uglifyOptions: {
+  //       compress: {
+  //           warnings: false,
+  //       },
+  //     },
+  //     sourceMap: false,
+  //   }),
+  // );
 }
 
 module.exports = {
@@ -52,6 +53,7 @@ module.exports = {
   },
   devServer: {
     contentBase: sourceDirectory,
+    open: true,
     port: 8000,
   },
   module: {
