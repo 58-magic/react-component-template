@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Block from 'react-component-template';// eslint-disable-line
 import 'react-component-template/style/component.css';// eslint-disable-line
+import Block from 'react-component-template/src'; // eslint-disable-line
 
 ReactDOM.render(
   <div className="component-template">

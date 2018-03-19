@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const sourceDirectory = path.resolve(__dirname, 'examples/src');
+const styleDirectory = path.resolve(__dirname, 'style');
 const targetDirectory = path.resolve(__dirname, 'examples/dist');
 
 const isDev = process.env.NODE_ENV !== 'production';
@@ -20,6 +21,7 @@ const plugins = [
       removeRedundantAttributes: !isDev,
     },
   }),
+  new webpack.HotModuleReplacementPlugin(),
   new ExtractTextPlugin('app-[contenthash:8].css'),
   new webpack.optimize.ModuleConcatenationPlugin(),
 ];
@@ -28,7 +30,8 @@ if (!isDev) {
   plugins.push(
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
-    }),
+    }));
+  plugins.push(
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: {
@@ -37,7 +40,7 @@ if (!isDev) {
       },
       sourceMap: false,
     }),
-);
+  );
 }
 
 module.exports = {
@@ -47,11 +50,14 @@ module.exports = {
   },
   output: {
     path: targetDirectory,
-    filename: '[name]-[chunkhash].js',
+    filename: '[name]-[hash].js',
     hashDigestLength: 8,
   },
   devServer: {
-    contentBase: sourceDirectory,
+    hot: true,
+    contentBase: [sourceDirectory, styleDirectory],
+    watchContentBase: true,
+    open: true,
     port: 8000,
   },
   module: {
