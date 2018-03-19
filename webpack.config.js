@@ -31,16 +31,16 @@ if (!isDev) {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }));
-  // plugins.push(
-  //   new UglifyJsPlugin({
-  //     uglifyOptions: {
-  //       compress: {
-  //           warnings: false,
-  //       },
-  //     },
-  //     sourceMap: false,
-  //   }),
-  // );
+  plugins.push(
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        compress: {
+            warnings: false,
+        },
+      },
+      sourceMap: false,
+    }),
+  );
 }
 
 module.exports = {
